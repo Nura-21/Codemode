@@ -1,0 +1,26 @@
+<header>
+  <p id="logo" routerLink=""><i class="material-icons">code</i>Codemode</p>
+
+  <div class="right">
+    <p routerLink="courses" routerLinkActive="active">Курсы</p>
+    <p routerLink="tutors" routerLinkActive="active">Преподаватели</p>
+    <p routerLink="info" routerLinkActive="active">Отзывы</p>
+    <p routerLink="contacts" routerLinkActive="active">Контакты</p>
+
+    <div class="dropdown">
+      <button class="dropbtn"> <p>Аккаунт</p></button>
+      <div class="dropdown-content">
+        <p [routerLink]="isLogged ? ['/account'] : ['/authorize']">Личный кабинет <i class="material-icons-outlined">person</i> </p>
+        <p *ngIf="!isLogged" [routerLink]="['/authorize']">Войти<i class="material-icons-outlined">login</i></p>
+        <p *ngIf="isLogged" [routerLink]="['/authorize']" (click)="logout()">Выйти<i class="material-icons-outlined">logout</i></p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<body>
+  <router-outlet></router-outlet>
+</body>
+
+<app-footer></app-footer>

@@ -1,0 +1,489 @@
+//Colors
+$main-color: #4825c0;
+// $main-color: #008cff;
+$accent: #f01e61;
+// $accent: #ff0000;
+$accent-2: #d71f5a;
+
+//Size variables
+$window_w: 100vw;
+$window_h: 100vh;
+$screen: 416px;
+
+//Header
+$header_p_big: 18px;
+$header_p_lil: 10px;
+$header_i_big: 32px;
+$header_i_lil: 20px;
+$header_gap_big: 40%;
+$header_gap_lil: 8%;
+$header_right_gap_big: 9%;
+$header_right_gap_lil: 5%;
+
+//Footer
+$footer_p_big: 16px;
+$footer_p_lil: 9px;
+$footer_i_big: 24px;
+$footer_i_lil: 12px;
+$footer_icons_lil: 16px;
+$footer_gap_big: 25%;
+$footer_gap_lil: 5%;
+
+//Home
+$home_title_big: 36px;
+$home_title_lil: 24px;
+$home_title_lil_big: 21px;
+$home_title_lil_lil: 19px;
+$home_p_big: 16px;
+$home_i_big: 26px;
+$home_i_lil: 20px;
+$home_image_padding_big: 15%;
+$home_image_width_big: 80%;
+
+//Contacts
+$contact_p_big: 18px;
+$contact_p_lil: 22px;
+$contact_i_big: 28px;
+$contact_title_big: 36px;
+
+//Courses
+$course_title_big: 32px;
+$course_title_lil: 22px;
+$course_title_lil_lil: 14px;
+$course_desc_big: 16px;
+$course_desc_lil: 14px;
+$course_price_big: 25px;
+$course_price_lil: 14px;
+$course_info_big: 20px;
+$course_info_lil: 12px;
+$courses_gap_big: 8%;
+$course_gap_lil: 2%;
+$course_each_v: 35vh;
+$course_each_v_lil: 25vh;
+$course_each_w: 21vw;
+$course_each_w_lil: 32vw;
+$course_logo_w: 4vw;
+$course_logo_w_lil: 10vw;
+$course_p_big: 16px;
+$course_p_lil: 8px;
+$course_i_lil: 20px;
+
+//Course-Detail
+$detial_title_h: 14vh;
+$detial_title_logo: 12vh;
+$detial_title_logo_lil: 10vh;
+$detial_title_big: 48px;
+$detial_title_lil: 30px;
+$detial_desc_big: 32px;
+$detial_desc_lil: 20px;
+$detial_price_big: 32px;
+$detial_price_lil: 22px;
+$detial_info_big: 22px;
+$detial_info_lil: 16px;
+$detial_p_big: 26px;
+
+//Turors
+$tutor_each_w: 42vw;
+$tutor_each_h: 30vh;
+$tutor_logo_w: 30vw;
+$tutor_logo_h: 10vh;
+$tutor_logo_p_big: 16px;
+$tutor_logo_p_lil: 11px;
+$tutor_p_big: 18px;
+$tutor_p_lil: 12px;
+$tutor_link_big: 20px;
+$tutor_content_h: 70px;
+$tutor_title_lil: 24px;
+
+//Tutor detail
+$tutor_detial_info: 26px;
+$tutor_detial_email: 24px;
+$tutor_detial_phoness: 20px;
+$tutor_detial_link: 20px;
+$tutor_detial_info_lil: 20px;
+$tutor_detial_email_lil: 16px;
+$tutor_detial_phoness_lil: 12px;
+$tutor_detial_link_lil: 20px;
+$tutor_detial_title_lil: 20px;
+
+//Login
+$login_w: 30vw;
+$login_w_lil: 101vw;
+$login_h: 70vh;
+$login_h_lil: 100vh;
+$gif: "https://media3.giphy.com/media/l4KhOrp5fGhvLqT6M/giphy.gif?cid=ecf05e47ri313e40xo2m0xluqlgrrszfpn3b7gk1z7aqutml&rid=giphy.gif&ct=g";
+$login_p_big: 26px;
+$login_title_big: 18px;
+$login_rad: 15px;
+$login_a_lil: 12px;
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 25px $main-color, 0 0 50px $accent;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradi {
+  100% {
+    background-position: 0 0, 0 0;
+  }
+}
+
+//Fade
+//Blur
+//Pop
+//Glow
+//Grow
+//Splat
+//Roll
+//Flip
+//Spin
+//Slide
+//Drop
+
+.animate {
+  animation-duration: 0.75s;
+  animation-delay: 0.5s;
+  animation-name: animate-fade;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+/* Fade In */
+.animate.fade {
+  animation-name: animate-fade;
+  animation-timing-function: ease;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pop In */
+.animate.pop {
+  animation-name: animate-pop;
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+/* Blur In */
+.animate.blur {
+  animation-name: animate-blur;
+  animation-timing-function: ease;
+}
+
+@keyframes animate-blur {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Glow In */
+.animate.glow {
+  animation-name: animate-glow;
+  animation-timing-function: ease;
+}
+
+@keyframes animate-glow {
+  0% {
+    opacity: 0;
+    filter: brightness(3) saturate(3);
+    transform: scale(0.8, 0.8);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    transform: scale(1, 1);
+  }
+}
+
+/* Grow In */
+.animate.grow {
+  animation-name: animate-grow;
+}
+
+@keyframes animate-grow {
+  0% {
+    opacity: 0;
+    transform: scale(1, 0);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+/* Splat In */
+.animate.splat {
+  animation-name: animate-splat;
+}
+
+@keyframes animate-splat {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0) rotate(20deg) translate(0, -30px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1, 1.1) rotate(15deg);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.1, 1.1) rotate(15deg) translate(0, -10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1) rotate(0) translate(0, 0);
+  }
+}
+
+/* Roll In */
+.animate.roll {
+  animation-name: animate-roll;
+}
+
+@keyframes animate-roll {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0) rotate(360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1) rotate(0deg);
+  }
+}
+
+/* Flip In */
+.animate.flip {
+  animation-name: animate-flip;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes animate-flip {
+  0% {
+    opacity: 0;
+    transform: rotateX(-120deg) scale(0.9, 0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1, 1);
+  }
+}
+
+/* Spin In */
+.animate.spin {
+  animation-name: animate-spin;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes animate-spin {
+  0% {
+    opacity: 0;
+    transform: rotateY(-120deg) scale(0.9, 0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1, 1);
+  }
+}
+
+/* Slide In */
+.animate.slide {
+  animation-name: animate-slide;
+}
+
+@keyframes animate-slide {
+  0% {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Drop In */
+.animate.drop {
+  animation-name: animate-drop;
+  animation-timing-function: cubic-bezier(0.77, 0.14, 0.91, 1.25);
+}
+
+@keyframes animate-drop {
+  0% {
+    opacity: 0;
+    transform: translate(0, -300px) scale(0.9, 1.1);
+  }
+  95% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.9, 1.1);
+  }
+  96% {
+    opacity: 1;
+    transform: translate(10px, 0) scale(1.2, 0.9);
+  }
+  97% {
+    opacity: 1;
+    transform: translate(-10px, 0) scale(1.2, 0.9);
+  }
+  98% {
+    opacity: 1;
+    transform: translate(5px, 0) scale(1.1, 0.9);
+  }
+  99% {
+    opacity: 1;
+    transform: translate(-5px, 0) scale(1.1, 0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1, 1);
+  }
+}
+
+/* Animation Delays */
+.delay-1 {
+  animation-delay: 0.6s;
+}
+.delay-2 {
+  animation-delay: 0.7s;
+}
+.delay-3 {
+  animation-delay: 0.8s;
+}
+.delay-4 {
+  animation-delay: 0.9s;
+}
+.delay-5 {
+  animation-delay: 1s;
+}
+.delay-6 {
+  animation-delay: 1.1s;
+}
+.delay-7 {
+  animation-delay: 1.2s;
+}
+.delay-8 {
+  animation-delay: 1.3s;
+}
+.delay-9 {
+  animation-delay: 1.4s;
+}
+.delay-10 {
+  animation-delay: 1.5s;
+}
+.delay-11 {
+  animation-delay: 1.6s;
+}
+.delay-12 {
+  animation-delay: 1.7s;
+}
+.delay-13 {
+  animation-delay: 1.8s;
+}
+.delay-14 {
+  animation-delay: 1.9s;
+}
+.delay-15 {
+  animation-delay: 2s;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .animate {
+    animation: none !important;
+  }
+}
+
+.load {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -3.5%;
+  .loader {
+    color: $main-color;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 78px;
+    opacity: 0.8;
+
+    &:before {
+      content: "{";
+      display: inline-block;
+      animation: pulse 0.5s alternate infinite ease-in-out;
+    }
+
+    &:after {
+      content: "}";
+      display: inline-block;
+      animation: pulse 0.5s 0.3s alternate infinite ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+<body >
+    <div class="login animate slide delay-3" *ngIf="!isLogged" >
+        <div class="form">
+          <p class="title">Добро пожаловать!</p>
+          <p class="title lil">Начни свой звездный путь в IT</p>
+          <input *ngIf="!register" type="text" placeholder="Имя пользователя" [(ngModel)]="nickname">
+          <input class="whileReg" *ngIf="register" type="text" placeholder="Имя пользователя" [(ngModel)]="nickname">
+          <input type="text" placeholder="Имя" [(ngModel)]="first_name" *ngIf="register">
+          <input type="text" placeholder="Фамилия" [(ngModel)]="last_name" *ngIf="register">
+          <input type="email" placeholder="Почта" [(ngModel)]="email" *ngIf="register">
+          <input class="whileRegPass" type="password" *ngIf="register" placeholder="Пароль" [(ngModel)]="password">
+          <input class="whileLogin" *ngIf="!register" type="password" placeholder="Пароль" [(ngModel)]="password">          
+          <button class="btn" *ngIf="!register" (click)="login()"><p>Войти</p></button>
+          <button class="btn" *ngIf="register" (click)="reg()"><p>Зарегистрироваться</p></button>
+          <p class="reg" *ngIf="!register" (click)="toRegister()">Зарегистрироваться</p>
+          <p class="reg" *ngIf="register" (click)="outRegister()">Уже есть аккаунт</p>
+          <a *ngIf="register" routerLink="/authorize/offer">Регистрируясь вы принимаете публичную оферту</a>
+        </div>
+    </div>
+</body>
+

@@ -1,0 +1,208 @@
+@import "../variables.scss";
+
+body {
+  width: 95%;
+  height: 100%;
+  // background-color: gray;
+  padding: 1%;
+  // text-transform: uppercase;
+
+  .card {
+    // background-color: rgb(49, 49, 49);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0 0 2%;
+    border: 3.5px solid $main-color;
+    border-radius: 25px;
+
+    .title {
+      width: 75%;
+      height: 20%;
+      // background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-bottom: 3px dotted $main-color;
+
+      & .name {
+        font-size: 42px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      & .username {
+        font-size: 18px;
+
+        & .self_username {
+          font-size: 24px;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .content {
+      // background-color: wheat;
+      width: 100%;
+      height: 68%;
+      display: flex;
+      flex-direction: row;
+      padding-top: 1%;
+
+      & .info {
+        width: 75%;
+
+        & .starts {
+          padding-bottom: 1.5%;
+          font-size: 18px;
+
+          & .self_info {
+            font-size: 24px;
+            font-weight: bold;
+          }
+
+          & .self_email {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+
+        border-bottom: 3px dotted $main-color;
+      }
+
+      & .image {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        & .btn {
+          width: 80%;
+          border: 2px solid $main-color;
+          border-radius: 10px;
+          padding: 2% 2%;
+        }
+
+        img {
+          width: 100%;
+          border: 3px solid $main-color;
+          border-radius: 20px;
+          padding: 10px;
+        }
+      }
+    }
+
+    .control {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 12%;
+    }
+
+    .btn {
+      width: 18%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      border-radius: 15px;
+      cursor: pointer;
+      padding: 1% 0.3%;
+      text-align: center;
+      transition: all 250ms;
+      text-decoration: none;
+      border: 3.5px solid $main-color;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      margin-right: 2%;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &:before {
+        content: "";
+        // background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        background: linear-gradient(
+          45deg,
+          rgba(72, 37, 192, 1) 0%,
+          rgba(215, 31, 90, 1) 33%,
+          rgba(72, 37, 192, 1) 67%,
+          rgba(215, 31, 90, 1) 100%
+        );
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 12px;
+      }
+
+      &:active {
+        color: white;
+      }
+
+      &:active:after {
+        background: white;
+      }
+
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: white;
+        left: 0;
+        top: 0;
+        border-radius: 12px;
+      }
+
+      & p {
+        font-weight: bold;
+        font-size: 16px;
+        background: -webkit-linear-gradient(20deg, $main-color, $accent);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .load {
+      margin-left: 0;
+      margin-top: -2%;
+    }
+
+    .edit {
+      border: none;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $main-color;
+    }
+
+    .save {
+      cursor: pointer;
+    }
+
+    .courses {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+  }
+}

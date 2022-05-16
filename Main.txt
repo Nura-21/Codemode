@@ -1,0 +1,38 @@
+Link:
+https://github.com/Nura-21/WEB-Project-Codemode.git
+
+Commands for repo:
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Nura-21/WEB-Project-Codemode.git
+git push -u origin main
+
+Create venv: 
+in this directory -> virtualenv Back
+
+Open server and possibility to connect from other devices:
+ng serve -o --disable-host-check --host 192.168.0.113 
+ng serve -o --disable-host-check --host 000.000.0.000
+
+
+Components:
+1) Home page
+2) Login/Register
+3) Oferta page
+4) All courses
+5) Course detail (Tutors here also)
+6) Benefits and students' feedbacks
+7) Tutors 
+8) Contacts
+9) News(not sure)
+
+Module:
+1) Tutors
+2) Courses (+Tutors)
+3) Timetable for each course (+Course, +Tutors)
+4) Students (+money_from_transactions)
+5) students_course_timetable (when student.course_id == course.course_id and timetable.course_id == course.course_id)
+6) transactions (+Students, +Course)
+7) News(not sure, with_time_to_sort)

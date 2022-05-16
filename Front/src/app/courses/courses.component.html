@@ -1,0 +1,23 @@
+<body>
+    <p class="title animate slide"><i class="material-icons">circle</i>Наши курсы</p>
+    <div class="block animate slide delay-8" *ngIf="loaded">
+        <div *ngFor="let course of courses" class="each" [routerLink]="['/courses/', course.id]">
+            <div class="logo" >
+                <i class="icons" style="content: url('{{course.url}}');"></i>
+            </div>
+            <div class="content" >
+                <p class="title">  {{course.title}}</p> 
+                <p class="description">{{course.description}}</p>
+                <span><p class="price">{{course.price | currency:'KZT':'symbol-narrow':'.0'}}</p>/за месяц</span> 
+                <p class="info">{{course.info}}</p>
+            </div>
+            <button class="btn"><p>Просмотреть</p></button>
+        </div>
+    </div>
+
+    <div class="load" *ngIf="!loaded">
+        <span class="loader"></span>
+    </div>
+    
+</body>
+

@@ -1,0 +1,33 @@
+<body>
+  <div class="each" *ngIf="loaded">
+    <div class="main animate slide">
+      <p class="title"><i class="material-icons">person</i>{{ tutor.name }}</p>
+    </div>
+
+    <div class="content animate slide delay-5">
+      <p class="info"><i class="material-icons">info</i> {{ tutor.info }}</p>
+      <p class="email"><i class="material-icons">mail</i>{{ tutor.email }}</p>
+      <p class="phones">
+        <i class="material-icons">phone</i>{{ tutor.phones }}
+      </p>
+      <a class="link" href="{{ tutor.url }}"
+        ><i class="material-icons">telegram</i>Telegram</a
+      >
+    </div>
+
+    <div class="control animate slide delay-10">
+      <button
+        class="btn"
+        [routerLink]="isLogged ? [] : ['/authorize']"
+        (click)="isLogged && toManager()"
+      >
+        <p>Пройти к мэнеджеру</p>
+      </button>
+      <button class="btn" routerLink="courses"><p>Доступные курсы</p></button>
+    </div>
+  </div>
+
+  <div class="load" *ngIf="!loaded">
+    <span class="loader"></span>
+  </div>
+</body>

@@ -1,0 +1,349 @@
+@import "../variables.scss";
+
+body {
+  margin-left: -5%;
+  height: $window_h * 0.9;
+  width: $window_w;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & i {
+      margin-right: 0.5%;
+      font-weight: bold;
+      font-size: $course_title_lil;
+      user-select: none;
+      background: -webkit-linear-gradient(
+        20deg,
+        $main-color 0%,
+        $accent 33%,
+        $main-color 67%,
+        $accent 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+
+      animation: change 20s ease-in-out infinite;
+    }
+
+    font-size: $course_title_big;
+    margin-top: 1%;
+    margin-left: -3%;
+    font-weight: bold;
+  }
+
+  .block {
+    display: flex;
+    flex-flow: row wrap;
+    gap: $courses_gap_big;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+
+    .each {
+      width: $tutor_each_w;
+      height: $tutor_each_h;
+      background-color: white;
+      color: $main-color;
+      border: 3px solid $main-color;
+      border-radius: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5%;
+      transition: all 250ms;
+      touch-action: manipulation;
+
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 17px;
+      }
+      &:before {
+        content: "";
+        // background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        background: linear-gradient(
+          90deg,
+          $main-color 0%,
+          $accent 33%,
+          $main-color 67%,
+          $accent 100%
+        );
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 17px;
+      }
+
+      &:active {
+        background: white;
+      }
+
+      &:active:after {
+        background: white;
+      }
+
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: white;
+        left: 0;
+        top: 0;
+        border-radius: 17px;
+      }
+
+      & .logo {
+        margin-top: -3.2%;
+        width: $tutor_logo_w;
+        height: $tutor_logo_h;
+        background-color: white;
+        border: 3px solid $main-color;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1% 2%;
+
+        & p {
+          font-size: $tutor_logo_p_big;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+
+      & .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+
+        & .title {
+          width: 100.5%;
+          font-size: $course_title_lil;
+          padding: 1% 1%;
+          border-top: 2px solid $main-color;
+          border-bottom: 2px solid $main-color;
+          margin-left: 0.2%;
+          margin-bottom: 3%;
+        }
+
+        & .info {
+          text-align: center;
+          font-size: $course_info_big;
+          height: $tutor_content_h;
+        }
+
+        & .link {
+          font-size: $tutor_link_big;
+          font-weight: bold;
+          display: inline-block;
+          background: -webkit-linear-gradient(20deg, $main-color, $accent);
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 400%;
+          animation: change 20s ease infinite;
+          height: $tutor_content_h - 20px;
+        }
+      }
+
+      & .btn {
+        width: 40%;
+        background-color: $main-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        cursor: pointer;
+        padding: 2% 5%;
+        transition: all 250ms;
+        text-decoration: none;
+        border: 2px solid $main-color;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        & i {
+          color: white;
+          margin-left: 10px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &:before {
+          content: "";
+          // background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+          background: linear-gradient(
+            90deg,
+            $main-color 0%,
+            $accent 33%,
+            $main-color 67%,
+            $accent 100%
+          );
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          background-size: 400%;
+          z-index: -1;
+          filter: blur(5px);
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          animation: glowing 20s linear infinite;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          border-radius: 12px;
+        }
+
+        &:active {
+          background-color: $main-color;
+        }
+
+        &:active:after {
+          background-color: $main-color;
+        }
+
+        &:hover:before {
+          opacity: 1;
+        }
+
+        &:after {
+          z-index: -1;
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: $main-color;
+          left: 0;
+          top: 0;
+          border-radius: 12px;
+        }
+
+        & p {
+          font-size: $course_p_big;
+          color: white;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .load {
+    width: 100%;
+    height: 76%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1%;
+    .loader {
+      color: $main-color;
+      font-family: Consolas, Menlo, Monaco, monospace;
+      font-weight: bold;
+      font-size: 78px;
+      opacity: 0.8;
+
+      &:before {
+        content: "{";
+        display: inline-block;
+        animation: pulse 0.5s alternate infinite ease-in-out;
+      }
+
+      &:after {
+        content: "}";
+        display: inline-block;
+        animation: pulse 0.5s 0.3s alternate infinite ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen) {
+  body {
+    .title {
+      margin-top: 4%;
+      i {
+        font-size: $course_i_lil;
+      }
+      font-size: $course_i_lil;
+    }
+    .block {
+      margin-top: 5%;
+      gap: $course_gap_lil;
+      flex-flow: column;
+      width: 100%;
+
+      .each {
+        width: 90%;
+        height: $course_each_v_lil;
+        margin-bottom: 9%;
+
+        & .logo {
+          width: 80%;
+          height: $course_logo_w_lil;
+          border-radius: 10px;
+          margin-top: -19px;
+          & p {
+            font-size: $tutor_logo_p_lil;
+          }
+        }
+
+        .content {
+          height: 70%;
+          width: 98%;
+          & .title {
+            width: 103%;
+            font-size: $course_title_lil_lil;
+            height: 20px;
+          }
+
+          & .description {
+            font-size: $course_desc_lil;
+          }
+
+          & span {
+            font-size: $course_desc_lil;
+          }
+
+          & .price {
+            font-size: $course_price_lil;
+            height: 40px;
+          }
+
+          & .info {
+            font-size: $course_info_lil;
+          }
+        }
+
+        .btn {
+          width: 70%;
+          height: 4.5vh;
+          margin-top: 7%;
+          padding: 2% 4%;
+          p {
+            font-size: $tutor_p_lil;
+          }
+        }
+      }
+    }
+  }
+}

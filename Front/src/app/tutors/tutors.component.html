@@ -1,0 +1,20 @@
+<body>
+    <p class="title animate slide"><i class="material-icons">circle</i>Наши преподаватели</p>
+    <div class="block animate slide delay-3" *ngIf="loaded">
+        <div *ngFor="let tutor of tutors" class="each">
+            <div class="logo" >
+                <p> {{tutor.name}}</p>
+            </div>
+            <div class="content">
+                <p class="title">{{tutor.email}}</p>
+                <p class="info">{{tutor.info}}</p>
+                <a class="link" href="{{tutor.url}}">Telegram</a>
+            </div>
+            <button class="btn" [routerLink]="['/tutors/', tutor.id]">  <p>Просмотреть</p> <i class="material-icons">search</i></button>
+        </div>
+    </div>
+
+    <div class="load" *ngIf="!loaded">
+        <span class="loader"></span>
+    </div>
+</body>

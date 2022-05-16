@@ -1,0 +1,150 @@
+@import "../variables.scss";
+
+header {
+  display: flex;
+  flex-direction: row;
+  gap: $header_gap_big;
+  align-items: center;
+  width: $window_w;
+  height: $window_h * 0.1;
+  background: rgb(72, 37, 192);
+  background: -moz-linear-gradient(
+    90deg,
+    $main-color 0%,
+    $accent 33%,
+    $main-color 67%,
+    $accent 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    $main-color 0%,
+    $accent 33%,
+    $main-color 67%,
+    $accent 100%
+  );
+  background: linear-gradient(
+    90deg,
+    $main-color 0%,
+    $accent 33%,
+    $main-color 67%,
+    $accent 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$main-color", endColorstr="$accent", GradientType=1);
+  background-size: 400%;
+
+  animation: change 20s ease infinite;
+  color: white;
+  user-select: none;
+
+  p {
+    cursor: pointer;
+    font-size: $header_p_big;
+    transition: all 250ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .active {
+    padding-bottom: 5px;
+    border-bottom: 3px solid white;
+    border-radius: 3px;
+  }
+
+  #logo {
+    margin-left: 5%;
+    margin-top: -0.2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $header_p_big + 2px; //20px(big)
+
+    i {
+      font-size: $header_i_big;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row;
+    width: $window_w * 0.5;
+    gap: $header_right_gap_big;
+    align-items: center;
+  }
+}
+
+.btn {
+  cursor: pointer;
+
+  &.login {
+    background-color: white;
+    display: flex;
+    // align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 1% 3%;
+    text-align: center;
+    transition: all 250ms;
+    text-decoration: none;
+    border: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    & p {
+      background: -webkit-linear-gradient(20deg, $main-color, $accent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    & i {
+      margin: 0;
+      padding: 0;
+      font-size: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: $screen) {
+  header {
+    #logo {
+      font-size: $header_p_lil;
+      margin-left: 2%;
+
+      i {
+        font-size: $header_i_lil;
+      }
+    }
+
+    p {
+      font-size: $header_p_lil;
+    }
+
+    gap: $header_gap_lil;
+
+    .right {
+      gap: $header_right_gap_lil;
+    }
+
+    .login {
+      border-radius: 10px;
+      padding: 4% 7%;
+
+      p {
+        font-size: 0px;
+      }
+
+      & i {
+        font-size: 17px;
+        background: -webkit-linear-gradient(20deg, $main-color, $accent);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

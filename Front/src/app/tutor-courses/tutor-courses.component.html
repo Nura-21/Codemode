@@ -1,0 +1,27 @@
+<body>
+    <div class="main animate slide" *ngIf="loaded">
+        <p class="title"><i class="material-icons">person</i>{{tutor.name}}</p>
+    </div>
+
+    <div class="block animate slide delay-8" *ngIf="loaded">
+        <div *ngFor="let course of courses" class="each" >
+            <div class="logo" [routerLink]="['/courses/', course.id]">
+                <i class="icons" style="content: url('{{course.url}}');"></i>
+            </div>
+            <div class="content" [routerLink]="['/courses/', course.id]">
+                <p class="title">  {{course.title}}</p> 
+                <p class="description">{{course.description}}</p>
+                <span><p class="price">{{course.price | currency:'KZT':'symbol-narrow':'.0'}}</p>/за месяц</span> 
+                <p class="info">{{course.info}}</p>
+            </div>
+            <button class="btn" [routerLink]="isLogged ? [] : ['/authorize']" (click)="isLogged && buyCourse(course.id)"><p>Записаться <i class="material-icons">shopping_cart</i> </p></button>
+        </div>
+    </div>
+
+    <div class="load" *ngIf="!loaded">
+        <span class="loader"></span>
+    </div>
+    
+</body>
+
+

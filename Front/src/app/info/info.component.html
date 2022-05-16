@@ -1,0 +1,22 @@
+<body>
+    <div class="title animate blur">
+        <p><i class="material-icons">circle</i>Наши студенты</p>
+    </div>
+    
+    <div class="each animate blur delay-8">
+        <div class="content" >
+            <p class="name" *ngIf="loaded">{{info[i].student}}</p>
+            <p class="course" *ngIf="loaded">Прошедший курс: {{info[i].course}}</p>
+            <p class="comment" *ngIf="loaded">{{info[i].comment}}</p>
+
+            <div class="load" *ngIf="!loaded">
+                <span class="loader"></span>
+            </div>
+
+        </div>
+        <div class="control">
+            <i class="material-icons-outlined" (click)="sliderPrev()">arrow_circle_left</i>
+            <i class="material-icons-outlined" (click)="sliderNext()">arrow_circle_right</i>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,17 @@
+<header>
+  <p id="logo" routerLink=""><i class="material-icons">code</i>Codemode</p>
+
+  <div class="right">
+    <p routerLink="courses" routerLinkActive="active">Курсы</p>
+    <p routerLink="tutors" routerLinkActive="active">Преподаватели</p>
+    <p routerLink="info" routerLinkActive="active">Отзывы</p>
+    <p routerLink="contacts" routerLinkActive="active">Контакты</p>
+
+    <button class="btn login" *ngIf="!isLogged" [routerLink]="['/authorize']" role="button">
+        <p>Войти</p><i class="material-icons login">login</i>
+      </button>
+      <button class="btn login" *ngIf="isLogged" [routerLink]="['/authorize']" (click)="logout()" role="button">
+        <p>Выйти</p><i class="material-icons logout">logout</i>
+      </button>
+  </div>
+</header>

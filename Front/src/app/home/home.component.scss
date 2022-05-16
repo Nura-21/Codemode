@@ -1,0 +1,124 @@
+@import "../variables.scss";
+
+body {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  width: $window_w;
+  height: 100%;
+  .btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4%;
+    padding: 1.5% 2.5%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    background-color: $main-color;
+    color: white;
+    transition: all 250ms;
+    font-size: $home_p_big;
+
+    &:hover {
+      transform: scale(1.05);
+
+      & i {
+        transform: translateX(5px);
+        transition: transform 400ms ease-in-out;
+      }
+    }
+
+    & i {
+      margin-left: 10px;
+    }
+  }
+  .left {
+    width: $window_w / 2;
+    padding-top: 15%;
+    p {
+      margin-bottom: 2%;
+      display: flex;
+      align-items: center;
+
+      & i {
+        user-select: none;
+        margin-right: 1%;
+        font-size: $home_i_big;
+      }
+    }
+
+    & .title {
+      font-size: $home_title_big;
+      &.lil {
+        font-size: $home_title_lil_big;
+      }
+    }
+  }
+  .right {
+    width: $window_w / 2;
+    height: 100%;
+    margin-left: -2%;
+    // margin-top: -5%;
+
+    img {
+      // padding-top: $home_image_padding_big;
+      // width: $home_image_width_big;
+      margin-top: 20%;
+      opacity: 0.9;
+      filter: blur(80px);
+      width: 60%;
+      height: 60%;
+      user-select: none;
+      animation: rotation 100s infinite linear;
+    }
+  }
+}
+
+@media screen and (max-width: $screen) {
+  body {
+    flex-direction: column;
+    .left {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      color: rgb(240, 240, 240);
+      & .title {
+        font-size: $home_title_lil;
+        &.lil {
+          font-size: $home_title_lil_lil;
+        }
+      }
+
+      p {
+        margin-bottom: 10%;
+
+        & i {
+          user-select: none;
+          margin-right: 1%;
+          font-size: $home_i_lil;
+        }
+      }
+
+      .btn {
+        width: 90%;
+        padding: 5% 10%;
+        border-radius: 20px;
+        font-weight: bold;
+        margin-top: 15%;
+        font-size: $home_title_lil;
+        i {
+          font-size: $home_title_big;
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+      height: 80%;
+      position: absolute;
+    }
+  }
+}
